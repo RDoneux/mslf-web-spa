@@ -1,0 +1,35 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  padding: 5px 30px;
+  font-size: 12px;
+
+  .app-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    &::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      color: var(--text-colour);
+      background: var(--text-colour);
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      color: var(--text-colour);
+      background: var(--text-colour);
+    }
+  }
+
+  .app-version {
+    justify-self: flex-end;
+  }
+}
