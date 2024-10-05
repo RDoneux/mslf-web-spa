@@ -1,4 +1,4 @@
-name: tplt-web-spa
+name: mslf-web-spa
 runtime:
   name: nodejs
   options:
