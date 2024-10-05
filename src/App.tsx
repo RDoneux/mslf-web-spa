@@ -5,17 +5,21 @@ import NavBar from './components/nav-bar/NavBar';
 import Poems from './routes/poems/Poems';
 import About from './routes/about/About';
 
+import styles from './App.module.css';
+
 function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="home" element={<Home />} />
-        <Route path="poems" element={<Poems />} />
-        <Route path="about" element={<About />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <div className={styles['content']}>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="home" element={<Home />} />
+          <Route path="poems" element={<Poems />} />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
