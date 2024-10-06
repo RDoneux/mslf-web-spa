@@ -5,8 +5,63 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 30px;
 
   h1 {
     margin: 0;
+    font-size: 54px;
+  }
+
+  .profile-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40vh;
+    height: 40vh;
+    max-width: 300px;
+    max-height: 300px;
+    min-height: 200px;
+    min-width: 200px;
+
+    border-radius: 50%;
+    border: 1px solid var(--accent-colour);
+
+    img {
+      border-radius: 50%;
+      width: 97%;
+      height: 97%;
+      object-fit: cover;
+    }
+  }
+
+  .enter-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+
+    h2 {
+      font-size: 31px;
+      margin: 0;
+      font-weight: 200;
+    }
+
+    button {
+      height: 50px;
+      width: 225px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: var(--accent-colour);
+      font-size: 16px;
+      letter-spacing: 2px;
+      transition: opacity 150ms linear;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
   }
 }

@@ -7,7 +7,10 @@
     justify-content: flex-end;
     gap: 30px;
     margin: 0;
-    padding-right: 3rem;
+    padding-right: 30px;
+    @media (max-width: 475px) {
+      padding-right: 10px;
+    }
     li {
       list-style: none;
 
