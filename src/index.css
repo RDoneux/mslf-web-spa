@@ -1,13 +1,15 @@
 :root {
   --accent-colour: #ef790d;
+  --text-colour: rgba(255, 255, 255, 0.87);
+  --background-colour: #242424;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  colour: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  colour: var(--text-color);
+  background-color: var(--background-colour);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,6 +27,8 @@ body,
 #root {
   display: flex;
   flex-direction: column;
+  background-color: var(--background-colour);
+  color: var(--text-colour);
 }
 
 a {

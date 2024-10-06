@@ -6,6 +6,7 @@ import Poems from './routes/poems/Poems';
 import About from './routes/about/About';
 
 import styles from './App.module.css';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }
