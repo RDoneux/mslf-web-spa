@@ -1,14 +1,16 @@
 :root {
   --accent-colour: #ef790d;
+  --subtle-accent-colour: #ef7a0d3b;
   --text-colour: rgba(255, 255, 255, 0.87);
-  --background-colour: #242424;
+  /* --background-colour: #242424; */
+  --background-colour: #0e090d;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  colour: var(--text-color);
+  color: var(--text-color);
   background-color: var(--background-colour);
 
   font-synthesis: none;
