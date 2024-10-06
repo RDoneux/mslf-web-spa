@@ -7,6 +7,7 @@ import About from './routes/about/About';
 
 import styles from './App.module.css';
 import Footer from './components/footer/Footer';
+import Poem from './routes/poems/Poem';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="home" element={<Home />} />
           <Route path="poems" element={<Poems />} />
+          <Route path="poem/:id" element={<Poem />} />
           <Route path="about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

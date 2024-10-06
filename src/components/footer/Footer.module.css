@@ -4,6 +4,7 @@
   justify-items: center;
   padding: 5px 30px;
   font-size: 12px;
+  width: 100%;
 
   @media (max-width: 475px) {
     padding: 5px 10px;
@@ -13,24 +14,6 @@
     align-items: center;
     grid-column: 2;
     gap: 5px;
-    &::before {
-      content: '';
-      display: block;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      color: var(--text-colour);
-      background: var(--text-colour);
-    }
-    &::after {
-      content: '';
-      display: block;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      color: var(--text-colour);
-      background: var(--text-colour);
-    }
 
     @media (max-width: 475px) {
       grid-column: 1;
