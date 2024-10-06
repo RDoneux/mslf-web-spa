@@ -9,26 +9,26 @@ export const poemsPage: IPoem[] = [
     timeToRead: '12 minute read',
     dateCreated: new Date(),
     content: `
-        Soaked for a time
-        and a
-        feeling of cold
-        rain and perfectly at
-        peace.
+Soaked for a time
+and a
+feeling of cold
+rain and perfectly at
+peace.
 
-        So want to dance naked
-        In the rain but
-        society tells me no…
-        too much pleasure is
-        not allowed and
-        too much joy is
-        frowned upon.
-        Only a small amount of
-        fun will be
-        tolerated.
+So want to dance naked
+In the rain but
+society tells me no…
+too much pleasure is
+not allowed and
+too much joy is
+frowned upon.
+Only a small amount of
+fun will be
+tolerated.
 
-        Tuck your clothes in and
-        Put your urges
-        away.`,
+Tuck your clothes in and
+Put your urges
+away.`,
     title: 'Soaked for a Time'
   },
   {
@@ -38,20 +38,21 @@ export const poemsPage: IPoem[] = [
       'https://images.pexels.com/photos/783737/pexels-photo-783737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     timeToRead: '5 minute read',
     dateCreated: new Date(),
-    content: `Falls from a utopia
-        are a regular occurrence.
-        Really too hard to prevent
-        my autistic body
-        from being involved
-        in some disaster.
-        Preventing the worst
-        from happening uses
-        all my strength.
-        When the inevitable occurs
-        my heart sinks like a stone
-        to the bottom of the river
-        where it remains until the next
-        fall from grace.`,
+    content: `
+Falls from a utopia
+are a regular occurrence.
+Really too hard to prevent
+my autistic body
+from being involved
+in some disaster.
+Preventing the worst
+from happening uses
+all my strength.
+When the inevitable occurs
+my heart sinks like a stone
+to the bottom of the river
+where it remains until the next
+fall from grace.`,
     title: 'Falls From Grace'
   }
 ];

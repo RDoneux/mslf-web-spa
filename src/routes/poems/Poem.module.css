@@ -1,0 +1,27 @@
+.title {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.author {
+  margin-top: 2px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+
+  &::before,
+  &::after {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+.content {
+  text-align: center;
+  font-size: 16px;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  white-space: pre-wrap;
+}
