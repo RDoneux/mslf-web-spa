@@ -97,22 +97,28 @@ pipeline {
                 }
 
                 steps {
-                    sh "curl -fsSL https://get.pulumi.com | sh"
-                    sh "$HOME/.pulumi/bin/pulumi version"
 
-                    withCredentials([aws(credentialsId: "AWS_CREDENTIALS")]){
-                        withEnv(["PATH+PULUMI=$HOME/.pulumi/bin"]) {
-                            sh "pulumi login 's3://${PULUMI_STACK_BUCKET}'"
-                            dir("iac") {
-                                sh "npm i"
-                                sh "pulumi stack select ${PULUMI_STACK}"
-                                withCredentials([string(credentialsId: 'PULUMI_ENCRYPTION_KEY', variable: "PULUMI_CONFIG_PASSPHRASE")]) {
-                                    sh "pulumi up --yes"
-                                }
-                            }  
-                        }
-
+                    sh "npm i -g firestore-tools"
+                    withCredentials([string(credentialId: "FIREBASE_TOKEN")]) {
+                        sh "firebase deploy --non-interactive --token '${FIREBASE_TOKEN}'"
                     }
+
+                    // sh "curl -fsSL https://get.pulumi.com | sh"
+                    // sh "$HOME/.pulumi/bin/pulumi version"
+
+                    // withCredentials([aws(credentialsId: "AWS_CREDENTIALS")]){
+                    //     withEnv(["PATH+PULUMI=$HOME/.pulumi/bin"]) {
+                    //         sh "pulumi login 's3://${PULUMI_STACK_BUCKET}'"
+                    //         dir("iac") {
+                    //             sh "npm i"
+                    //             sh "pulumi stack select ${PULUMI_STACK}"
+                    //             withCredentials([string(credentialsId: 'PULUMI_ENCRYPTION_KEY', variable: "PULUMI_CONFIG_PASSPHRASE")]) {
+                    //                 sh "pulumi up --yes"
+                    //             }
+                    //         }  
+                    //     }
+
+                    // }
                 }
                 post {
                     success {
