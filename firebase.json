@@ -1,5 +1,6 @@
 {
   "firestore": {
+    "site": "myself-873de",
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
