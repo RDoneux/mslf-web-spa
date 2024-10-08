@@ -92,7 +92,8 @@ pipeline {
                 when {
                     anyOf {
                         branch 'master';
-                        branch 'development'
+                        branch 'development';
+                        branch 'firebase'
                     }
                 }
 
