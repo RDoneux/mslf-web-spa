@@ -3,12 +3,12 @@ pipeline {
     agent any
 
     environment {
+        // // USED ONLY FOR AWS DEPLOY
         // PULUMI_STACK_BUCKET = "mslf-web-spa-pulumi?region=eu-west-2"
-
         // // can use "pulumi stack -Q" to find this
         // PULUMI_STACK = "organization/mslf-web-spa/dev"
 
-        GOOGLE_APPLICATION_CREDENTIALS = credentials('GOOGLE_APPLICATION_CREDENTIALS') // Referring to the uploaded secret file
+        GOOGLE_APPLICATION_CREDENTIALS = credentials('GOOGLE_APPLICATION_CREDENTIALS')
     }
 
     stages {
@@ -95,26 +95,15 @@ pipeline {
                     anyOf {
                         branch 'master';
                         branch 'development';
-                        branch 'firebase'
                     }
                 }
 
                 steps {
 
-                    // sh "npm i -g firestore-tools"
-                    // sh "curl -fsSL firebase.tools | sh"
-                    // sh "curl -fsSL https://firebase.tools | sh"
-                    // sh "$HOME/.firebase/bin/firebase version"
-                    // sh "curl -sL firebase.tools | bash"
-                    sh 'echo $GOOGLE_APPLICATION_CREDENTIALS'
                     sh "npm i firebase-tools"
-                    // withCredentials([string(credentialsId: "FIREBASE_TOKEN", variable: "FIREBASE_TOKEN")]) {
-                        // withEnv(["PATH+FIREBASE=$HOME/.firebase/bin"]) {
-                            // sh "./node_modules/.bin/firebase deploy  --non-interactive --token '${FIREBASE_TOKEN}'"
                     sh "./node_modules/.bin/firebase deploy --non-interactive"
-                        // }
-                    // }
 
+                    // // BELOW ONLY REQUIRED FOR AWS DEPLOY
                     // sh "curl -fsSL https://get.pulumi.com | sh"
                     // sh "$HOME/.pulumi/bin/pulumi version"
 
@@ -129,7 +118,6 @@ pipeline {
                     //             }
                     //         }  
                     //     }
-
                     // }
                 }
                 post {
