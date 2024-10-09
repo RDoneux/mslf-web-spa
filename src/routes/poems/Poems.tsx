@@ -1,14 +1,21 @@
 import { useEffect, useState } from 'react';
 import { IPoem } from './interfaces/IPoem';
 import styles from './Poems.module.css';
-import { poemsPage } from '../../assets/mock-data';
 import { NavLink } from 'react-router-dom';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firebase';
 
 export default function Poems() {
   const [poemData, setPoemData] = useState<IPoem[]>([]);
 
   useEffect(() => {
-    setPoemData(poemsPage);
+    getDocs(collection(db, 'poems')).then((querySnapshot) => {
+      const poems: IPoem[] = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id
+      })) as IPoem[];
+      setPoemData(poems);
+    });
   }, []);
 
   return (
