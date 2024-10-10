@@ -3,18 +3,20 @@ import IAuthor from './interfaces/IAuthor.ts';
 import styles from './Home.module.css';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 
 export default function Home() {
   const [authorDetails, setAuthorDetails] = useState<IAuthor>();
 
   useEffect(() => {
-    getDocs(collection(db, 'author')).then((querySnapshot) => {
-      const authorInformation: IAuthor = querySnapshot.docs.map<IAuthor>(
-        (doc) => ({ ...doc.data(), id: doc.id }) as IAuthor
-      )[0];
-      setAuthorDetails(authorInformation);
+    const documentReference = doc(db, 'author', 'details');
+    getDoc(documentReference).then((documentSnapshot) => {
+      const details: IAuthor = {
+        ...documentSnapshot.data(),
+        id: documentSnapshot.id
+      } as IAuthor;
+      setAuthorDetails(details);
     });
   }, []);
 
