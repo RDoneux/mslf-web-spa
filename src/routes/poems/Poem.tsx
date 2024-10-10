@@ -29,7 +29,7 @@ export default function Poem() {
       <h2 className={`${styles['author']} dots`}>
         {poem?.author.toUpperCase()}
       </h2>
-      <ReactQuill theme="bubble" readOnly={true} value={poem?.content}/>
+      <ReactQuill theme="bubble" readOnly={true} value={poem?.content} />
     </div>
   );
 }
