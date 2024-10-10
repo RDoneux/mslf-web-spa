@@ -1,28 +1,28 @@
 .pip-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 
-    .page-pip {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: var(--accent-colour);
-        opacity: .5;
-        transition: transform 150ms ease-out;
-        cursor: pointer;
+  .page-pip {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent-colour);
+    opacity: 0.5;
+    transition: transform 150ms ease-out;
+    cursor: pointer;
 
-        &.current-page{
-            transform: translateY(-7px) scale(1.3);
-        }
-
-        &:hover {
-            transform: scale(2);
-        }
+    &.current-page {
+      transform: translateY(-7px) scale(1.3);
     }
 
-    .pointer {
-        cursor: pointer;
+    &:hover {
+      transform: scale(2);
     }
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
 }
