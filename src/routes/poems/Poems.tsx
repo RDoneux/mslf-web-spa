@@ -15,7 +15,7 @@ export default function Poems() {
 
   useEffect(() => {
     paginate(true);
-  }, [paginate]);
+  });
 
   return (
     <div className={styles['container']}>
