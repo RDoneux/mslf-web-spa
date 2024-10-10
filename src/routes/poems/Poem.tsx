@@ -5,6 +5,7 @@ import styles from './Poem.module.css';
 import BackButton from '../../components/back-button/BackButton';
 import { db } from '../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
+import ReactQuill from 'react-quill';
 
 export default function Poem() {
   const { id } = useParams();
@@ -28,7 +29,7 @@ export default function Poem() {
       <h2 className={`${styles['author']} dots`}>
         {poem?.author.toUpperCase()}
       </h2>
-      <p className={styles['content']}>{poem?.content}</p>
+      <ReactQuill theme="bubble" readOnly={true} value={poem?.content}/>
     </div>
   );
 }
