@@ -15,7 +15,7 @@ export default function Poems() {
 
   useEffect(() => {
     paginate(true);
-  });
+  }, []); // eslint-disable-line
 
   return (
     <div className={styles['container']}>
