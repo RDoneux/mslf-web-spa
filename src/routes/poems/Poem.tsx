@@ -1,16 +1,24 @@
 import { useParams } from 'react-router-dom';
 import { IPoem } from './interfaces/IPoem';
 import { useEffect, useState } from 'react';
-import { poemsPage } from '../../assets/mock-data';
 import styles from './Poem.module.css';
 import BackButton from '../../components/back-button/BackButton';
+import { db } from '../../firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
 export default function Poem() {
   const { id } = useParams();
   const [poem, setPoem] = useState<IPoem>();
 
   useEffect(() => {
-    setPoem(poemsPage.find((poem: IPoem) => poem.id === id));
+    const documentReference = doc(db, 'poems', id ?? '');
+    getDoc(documentReference).then((documentSnapshot) => {
+      const poem: IPoem = {
+        ...documentSnapshot.data(),
+        id: documentSnapshot.id
+      } as IPoem;
+      setPoem(poem);
+    });
   }, [id]);
 
   return (
