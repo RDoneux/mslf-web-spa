@@ -19,7 +19,11 @@ export default function About() {
   return (
     <div className={styles['container']}>
       <h1>ABOUT</h1>
-      <ReactQuill theme="bubble" readOnly={true} value={aboutInfo?.inspiration} />
+      <ReactQuill
+        theme="bubble"
+        readOnly={true}
+        value={aboutInfo?.inspiration}
+      />
     </div>
   );
 }
