@@ -11,7 +11,7 @@ const PAGE_SIZE: number = 10;
 export default function Poems() {
   const poemCount = useTotalPoemCount();
   const { poems, paginate } = usePagination(PAGE_SIZE);
-  const pages: number = Math.round((poemCount ?? 0) / PAGE_SIZE);
+  const pages: number = Math.ceil((poemCount ?? 0) / PAGE_SIZE);
 
   useEffect(() => {
     paginate(true);
