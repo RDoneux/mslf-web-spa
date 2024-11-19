@@ -53,7 +53,7 @@
       }
 
       @media (max-width: 540px) {
-        height: 120px;
+        height: fit-content;
         width: 90%;
       }
 
