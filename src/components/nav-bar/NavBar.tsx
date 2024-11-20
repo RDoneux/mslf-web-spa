@@ -27,6 +27,16 @@ export default function NavBar() {
         </li>
         <li>
           <NavLink
+            to="blogs"
+            className={({ isActive }) =>
+              isActive ? styles['active-link'] : ''
+            }
+          >
+            BLOG
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
             to="about"
             className={({ isActive }) =>
               isActive ? styles['active-link'] : ''

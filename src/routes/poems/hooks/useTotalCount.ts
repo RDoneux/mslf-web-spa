@@ -7,11 +7,11 @@ import {
 import { useEffect, useState } from 'react';
 import { db } from '../../../firebase';
 
-export const useTotalPoemCount = () => {
+export const useTotalCount = (collection: string) => {
   const [totalPoemCount, setTotalPoemCount] = useState<number>();
 
   useEffect(() => {
-    const documentReference = doc(db, 'poems', 'count');
+    const documentReference = doc(db, collection, 'count');
     getDoc(documentReference).then(
       (value: DocumentSnapshot<DocumentData, DocumentData>) => {
         const count: DocumentData | undefined = value.data();
