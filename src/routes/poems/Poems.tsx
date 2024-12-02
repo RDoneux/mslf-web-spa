@@ -3,14 +3,14 @@ import { IPoem } from './interfaces/IPoem';
 import styles from './Poems.module.css';
 import { NavLink } from 'react-router-dom';
 import Pagination from '../../components/pagination/Pagination';
-import { useTotalPoemCount } from './hooks/useTotalPoemCount';
+import { useTotalCount } from './hooks/useTotalCount';
 import { usePagination } from './hooks/usePagination';
 
 const PAGE_SIZE: number = 10;
 
 export default function Poems() {
-  const poemCount = useTotalPoemCount();
-  const { poems, paginate } = usePagination(PAGE_SIZE);
+  const poemCount = useTotalCount('poems');
+  const { items, paginate } = usePagination<IPoem>(PAGE_SIZE, 'poems');
   const pages: number = Math.ceil((poemCount ?? 0) / PAGE_SIZE);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function Poems() {
     <div className={styles['container']}>
       <h1>POEMS</h1>
       <div className={styles['poem-wrapper']}>
-        {poems.map((poem: IPoem) => (
+        {items.map((poem: IPoem) => (
           <div key={poem.id} className={styles['poem-container']}>
             <NavLink to={`/poem/${poem.id}`}>
               <h2>{poem.title}</h2>
