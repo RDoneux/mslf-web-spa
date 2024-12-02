@@ -23,7 +23,7 @@ export default function Blog() {
   }, [id]);
 
   return (
-    <div>
+    <div className={styles['wrapper']}>
       <BackButton />
       <h1 className={styles['title']}>{blog?.title}</h1>
       <h2 className={`${styles['author']} dots`}>
